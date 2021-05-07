@@ -278,6 +278,8 @@ p {
   height: 100px;
   border-radius: 20%;
   margin-right: 1rem;
+  margin-left: 5rem;
+  cursor: pointer;
 }
 .users h4 {
   margin-bottom: 0.15rem;
