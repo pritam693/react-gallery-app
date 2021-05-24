@@ -14,7 +14,7 @@ const Gallery = () => {
   const [ocr1Data, setOcrData] = useState();
   const [gpsLoc, setGpsLoc] = useState();
   const [woLoc, setWoLoc] = useState();
-  console.log(ocr1Data);
+  console.log(users);
   // const settings = {
   //   dots: false,
   //   fade: true,
@@ -42,11 +42,16 @@ const Gallery = () => {
   //   setCurrent(current === 0 ? length - 1 : current - 1);
   // };
 
-  // const imageUrls = users.map((user) => {
-  //   const images = user.blobURL;
-  //   return images;
-  // });
-  // console.log(imageUrls);
+  const workdIds = users.map((user) => {
+    const workIdArr = user.workId;
+    return workIdArr;
+  });
+  const workLineItemIds = users.map((user) => {
+    const workLineItemIdArr = user.workLineItemId;
+    return workLineItemIdArr;
+  });
+
+  // console.log(imageUrls);workLineItemId
 
   const getSelectedUsers = async () => {
     const response = await fetch(
@@ -73,7 +78,10 @@ const Gallery = () => {
     <>
       <div>
         <div className="imageGrid">
-          <h3>Work ID : {users.workId}</h3>
+          <h3>
+            Work ID : {workdIds[0]} <br></br>Work Line Item Id :{" "}
+            {workLineItemIds[4]}{" "}
+          </h3>
           {/* <form onSubmit={handleSubmit}>
             <input
               type="text"
@@ -114,6 +122,8 @@ const Gallery = () => {
                         left: 100,
                         right: 90,
                         bottom: 20,
+                        border: "1px solid #ccc",
+                        borderRadius: "10px",
                         backgroundColor: "rgb(34, 32, 32)",
                       },
                       content: {
@@ -137,11 +147,13 @@ const Gallery = () => {
                     <div>
                       <div id="wrapper">
                         <div className="main">Service Appointment:</div>
-                        {ocr1Data !== null && (
-                          <div className="OCR">
-                            OCR Text: {ocr1Data} <br />
-                          </div>
-                        )}
+                        {ocr1Data !== null &&
+                          ocr1Data !== undefined &&
+                          ocr1Data.length !== 0 && (
+                            <div className="OCR">
+                              OCR Text: {ocr1Data} <br />
+                            </div>
+                          )}
                         <div className="rest">
                           GPS Loc: <br />
                           WO Loc: <br />

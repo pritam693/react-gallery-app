@@ -238,6 +238,11 @@ div .rest {
   transition: var(--transition);
 }
 
+.btnclose:hover {
+  background: var(--clr-primary-1);
+  color: var(--clr-primary-5);
+}
+
 .btn:hover {
   background: var(--clr-primary-1);
   color: var(--clr-primary-5);
@@ -384,10 +389,18 @@ div .rest {
   cursor: pointer;
 }
 
-.custom-Modal__Overlay {
+/* .custom-Modal__Overlay {
   opacity: 10;
-  transition: opacity 5000ms ease-in-out;
+  transition: opacity 500ms ease-out;
 }
+
+.custom-Modal__Overlay--after-open {
+  opacity: 1;
+}
+
+.custom-Modal__Overlay--before-close {
+  opacity: 0;
+} */
 .users h4 {
   margin-bottom: 0.15rem;
 }
