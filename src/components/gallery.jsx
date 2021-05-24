@@ -60,10 +60,6 @@ const Gallery = () => {
     );
     var users = await response.json();
     setUsers(users);
-    //const length = users.length;
-    // for (var i = 0; i < length; i++) {
-    //   users.unshift(i);
-    // }
   };
 
   // const handleSubmit = (e) => {
